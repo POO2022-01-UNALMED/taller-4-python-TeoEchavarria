@@ -1,19 +1,24 @@
-
-
 from classroom.asignatura import Asignatura
 from classroom.asignatura import Asignatura
 
 
 class Grupo:
 
-    grado = None
+    grado = f'Grado 12'
 
     def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=None):
         self._grupo = grupo
         self._asignaturas = asignaturas
         self.listadoAlumnos = estudiantes
+    
+    def __str__(self):
+        aux = self._grupo
+        if aux == "grupo ordinado":
+            aux = "grupo predeterminado"
+            return "Grupo de estudiantes: "+ aux
+        return "Grupo de estudiantes: "+ aux
 
-    def listadoAsignaturas(self, kwargs):
+    def listadoAsignaturas(self, **kwargs):
         for x in kwargs.values():
             self._asignaturas.append(Asignatura(x))
 
