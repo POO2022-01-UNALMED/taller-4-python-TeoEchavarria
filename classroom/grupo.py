@@ -6,7 +6,7 @@ class Grupo:
 
     grado = f'Grado 12'
 
-    def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=[]):
+    def __init__(self, grupo="grupo ordinado", asignaturas=[], estudiantes=[]):
         self._grupo = grupo
         self._asignaturas = asignaturas
         self.listadoAlumnos = estudiantes
@@ -30,13 +30,6 @@ class Grupo:
             self.listadoAlumnos = [alumno]
 
     @ classmethod
-    def asignarNombre(cls, nombre="Grado 10"):
-        cls.grado = nombre
-
-    @ classmethod
     def asignarNombre(cls, nombre="Grado 6"):
         cls.grado = nombre
 
-    @ classmethod
-    def asignarNombre(cls, nombre="Grado 4"):
-        cls.grado = nombre
